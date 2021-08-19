@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { Box, CardMedia, Grid, Hidden, IconButton, Link, Menu, MenuItem } from '@material-ui/core';
+import { Box, Grid, Hidden, IconButton, Link, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../../imagenes/logoPng2.png'
 import { useState } from 'react';
@@ -59,7 +59,7 @@ export default function MenuNav() {
           <Hidden smUp>
             <Grid container direction='row' justifyContent='space-between' sm={12}>
               <Grid sm={8}>
-                   <img src={logo} className={classes.img}></img>
+                   <img src={logo} className={classes.img} alt='tu vieja'></img>
               </Grid>
               <Grid sm={4}>
                 <IconButton
@@ -100,7 +100,7 @@ export default function MenuNav() {
             <Grid container direction='row' sm={12} alignItems='center'>
                   <Grid sm className={classes.flexContent} justifyContent='flex-start'>
                       <Box pl={8}>
-                          <img src={logo} className={classes.img}></img>
+                           <img src={logo} className={classes.img} alt='tu vieja' ></img>
                       </Box>
                   </Grid>
                   <Grid sm={1}>
