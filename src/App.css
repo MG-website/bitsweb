@@ -1,7 +1,15 @@
 .App {
   text-align: center;
-}
+  /* background-color: rgb(138, 8, 245); */
+  padding-top: 100px;
+  font-family: 'acumin-pro, BlinkMacSystemFont, sans-serif, Monserrat, sans-serif' !important;
 
+}
+.backSection {
+  background-image: url('../src/imagenes/section1.gif');
+  background-position-x: left;
+  background-size: auto;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

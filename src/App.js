@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Inicio from './vistas/inicio/inicio';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+import themeLight from './theme/light';
+import { Grid } from '@material-ui/core';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={createTheme(themeLight)}>
+        <Grid container >
+            <Grid sm></Grid>
+            <Grid sm={8}>
+              <Inicio/>
+            </Grid>
+            <Grid sm></Grid>
+        </Grid>
+      </ThemeProvider>
     </div>
   );
 }
