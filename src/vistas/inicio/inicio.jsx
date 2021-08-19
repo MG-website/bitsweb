@@ -1,4 +1,4 @@
-import { Box, Grid, Hidden, Typography,makeStyles } from '@material-ui/core'
+import { Box, Grid, Typography,makeStyles } from '@material-ui/core'
 import React from 'react'
 import MenuNav from '../../componentes/menu/menu'
 import Tarjeta from '../../componentes/tajetas/tarjeta'
