@@ -23,8 +23,8 @@ const Inicio = () => {
     <>
       <MenuNav/>
       <Grid container direction='row' className='backSection'>
-        <Grid sm={2}/>
-        <Grid sm={5}>
+        <Grid item sm={2}/>
+        <Grid xs={12} item sm={5}>
             <Box pt={5} alignContent='center'>
                 <Typography variant='h2' align='left' className={classes.font}>Invirtiendo en los lideres del mañana.</Typography>
             </Box>
@@ -32,14 +32,14 @@ const Inicio = () => {
                 <Typography variant='h5' align='left' className={classes.font}>Estudia con nosotros y se parte de esta revolucion..</Typography>
             </Box>
         </Grid>
-        <Grid sm={5}>
-          {/* <Hidden smDown>
+        <Grid item sm={5}>
+          {/* <Hidden item smDown>
               <img src={section1}></img>
           </Hidden> */}
         </Grid>
       </Grid>
       <Grid container direction='row'>
-        <Grid sm={4}>
+        <Grid item xs={12} sm={4}>
           <Tarjeta 
             titulo='Constante soporte' 
             contenido='Una vez finalizado el curso puedes repetirlo. Sin costo'
@@ -47,7 +47,7 @@ const Inicio = () => {
             tipo='infinito'
           ></Tarjeta>
         </Grid>
-        <Grid sm={4}>
+        <Grid item  xs={12} sm={4}>
           <Tarjeta 
             titulo='Trabajo en equipo' 
             contenido='Te acompañamos en tu proceso de aprendizaje. Ganamos si tu ganas!'
@@ -55,7 +55,7 @@ const Inicio = () => {
             tipo='mayorMenor'
           ></Tarjeta>
         </Grid>
-        <Grid sm={4}>
+        <Grid item xs={12} sm={4}>
           <Tarjeta 
             titulo='Sin costo inicial' 
             contenido='Abonas el curso una vez que consigas tu primer trabajo en IT!'
@@ -67,7 +67,7 @@ const Inicio = () => {
         <br/>
         <br/>
          <Grid container direction='row'>
-         <Grid sm={4}>
+         <Grid item xs={12} sm={4}>
             <Tarjeta 
               titulo='gitHub' 
               contenido='Te enseñamos Git & GitHub para versionar tu codigo y poder trabajar en un verdadero entorno cooperativo.'
@@ -75,7 +75,7 @@ const Inicio = () => {
               tipo='gitHub'
             ></Tarjeta>
         </Grid>
-        <Grid sm={4}>
+        <Grid item xs={12} sm={4}>
             <Tarjeta 
               titulo='Cloud' 
               contenido='Las clases seran grabadas y almacenadas en la nube para que las puedas repasarlas cuando lo necesites. Por lo que no te preocupes si faltaste a alguna clase.'
@@ -83,7 +83,7 @@ const Inicio = () => {
               tipo='Cloud'
             ></Tarjeta>
         </Grid>
-        <Grid sm={4}>
+        <Grid item xs={12} sm={4}>
             <Tarjeta 
               titulo='Clases en vivo' 
               contenido='Clases 100% online. Estudi'

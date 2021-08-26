@@ -56,12 +56,12 @@ export default function MenuNav() {
     <div className={classes.root}>
       <AppBar position="fixed" color='secondary' >
         <Toolbar>
-          <Hidden smUp>
-            <Grid container direction='row' justifyContent='space-between' sm={12}>
-              <Grid sm={8}>
+          <Hidden  smUp>
+            <Grid container direction='row' justifyContent='space-between' >
+              <Grid item sm={8}>
                    <img src={logo} className={classes.img} alt='tu vieja'></img>
               </Grid>
-              <Grid sm={4}>
+              <Grid item sm={4}>
                 <IconButton
                       aria-label="account of current user"
                       aria-controls="menu-appbar"
@@ -97,26 +97,26 @@ export default function MenuNav() {
    
           </Hidden>
           <Hidden smDown>
-            <Grid container direction='row' sm={12} alignItems='center'>
-                  <Grid sm className={classes.flexContent} justifyContent='flex-start'>
+            <Grid container direction='row'  alignItems='center'>
+                  <Grid item sm className={classes.flexContent} >
                       <Box pl={8}>
                            <img src={logo} className={classes.img} alt='tu vieja' ></img>
                       </Box>
                   </Grid>
-                  <Grid sm={1}>
+                  <Grid item sm={1}>
                     <Typography className={classes.font} variant='h6' component={Link}>Home</Typography>
                   </Grid>
-                  <Grid sm={1}>
+                  <Grid item sm={1}>
                     <Typography className={classes.font} variant='h6' component={Link}>Carrera</Typography>
                   </Grid>
-                  <Grid sm={2}>
+                  <Grid item sm={2}>
                       <Typography className={classes.font} variant='h6' component={Link}>Sobre nosotros</Typography>
                   </Grid>
-                  <Grid sm={1}>
+                  <Grid item sm={1}>
                   {/* <Typography className={classes.font} color='primary' component={Button} variant='h6'>Aplicar</Typography> */}
                        <Button className={classes.font} color='primary'>Aplicar</Button> 
                   </Grid>
-                  <Grid sm={1}/>
+                  <Grid item sm={1}/>
               </Grid>
           </Hidden>  
             

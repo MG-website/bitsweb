@@ -4,14 +4,12 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
+import CustomIconCard from '../commons/customIconCard';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
+const useStyles = makeStyles((theme)=>({
+  card: {
+    margin:theme.spacing(1)
   },
   infinitoLogo:{
     fontSize:'50px',
@@ -37,36 +35,27 @@ const useStyles = makeStyles({
     fontSize:'50px',
     color:'#EA6ECC'
   }
-});
+}));
 
 export default function Tarjeta({titulo, contenido, Img, tipo}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.card} >
       <CardActionArea>
-        <CardContent>
-            <Grid sm={12}>
-                <Img className={ tipo === 'infinito' ? 
-                                classes.infinitoLogo
-                                : tipo === 'mayorMenor' ?
-                                classes.mayorMenor :
-                                tipo === 'gitHub' ?
-                                classes.gitHub :
-                                tipo === 'Cloud' ?
-                                classes.could :
-                                tipo === 'ClasesEnVivo' ?
-                                classes.clasesEnVivo :
-                                classes.sinCosto
-                                }/>
+        <Box height={250}>
+          <CardContent>
+            <Grid xs={12}>                
+              <CustomIconCard tipo={tipo} Img={Img}/>
+              <Typography gutterBottom variant="h5" component="h2">
+                  {titulo}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                  {contenido}
+              </Typography>
             </Grid>
-          <Typography gutterBottom variant="h5" component="h2">
-           {titulo}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-              {contenido}
-          </Typography>
-        </CardContent>
+          </CardContent>
+        </Box>
       </CardActionArea>
     </Card>
   );
