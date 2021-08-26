@@ -9,6 +9,8 @@ import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 import GitHubIcon from '@material-ui/icons/GitHub'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import QueuePlayNextIcon from '@material-ui/icons/QueuePlayNext';
+
+
 const useStyles = makeStyles({
 back:{
   backgroundImage:section1
@@ -17,6 +19,45 @@ font:{
   color:'#F1F1F1'
 }
 })
+
+const infoCard = [
+  {
+    titulo:'Constante soporte' ,
+    contenido:'Una vez finalizado el curso puedes repetirlo. Sin costo',
+    Img:AllInclusiveIcon,
+    tipo:'infinito',
+  },
+  {
+    titulo:'Trabajo en equipo',
+    contenido:'Te acompañamos en tu proceso de aprendizaje. Ganamos si tu ganas!',
+    Img:CodeIcon,
+    tipo:'mayorMenor',
+  },
+  {
+    titulo:'Sin costo inicial', 
+    contenido:'Abonas el curso una vez que consigas tu primer trabajo en IT!',
+    Img:MoneyOffIcon,
+    tipo:'sinCosto',
+  },
+  {
+    titulo:'gitHub', 
+    contenido:'Te enseñamos Git & GitHub para versionar tu codigo y poder trabajar en un verdadero entorno cooperativo.',
+    Img:GitHubIcon,
+    tipo:'gitHub',
+  },
+  {
+    titulo:'Cloud', 
+    contenido:'Las clases seran grabadas y almacenadas en la nube para que las puedas repasarlas cuando lo necesites. Por lo que no te preocupes si faltaste a alguna clase.',
+    Img:CloudUploadIcon,
+    tipo:'Cloud',
+  },
+  {
+    titulo:'Clases en vivo', 
+    contenido:'Clases 100% online. Estudi',
+    Img:QueuePlayNextIcon,
+    tipo:'ClasesEnVivo',
+  }
+]
 const Inicio = () => {
   const classes = useStyles()
   return (
@@ -39,58 +80,13 @@ const Inicio = () => {
         </Grid>
       </Grid>
       <Grid container direction='row'>
-        <Grid item xs={12} sm={4}>
-          <Tarjeta 
-            titulo='Constante soporte' 
-            contenido='Una vez finalizado el curso puedes repetirlo. Sin costo'
-            Img={AllInclusiveIcon}
-            tipo='infinito'
-          ></Tarjeta>
-        </Grid>
-        <Grid item  xs={12} sm={4}>
-          <Tarjeta 
-            titulo='Trabajo en equipo' 
-            contenido='Te acompañamos en tu proceso de aprendizaje. Ganamos si tu ganas!'
-            Img={CodeIcon}
-            tipo='mayorMenor'
-          ></Tarjeta>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Tarjeta 
-            titulo='Sin costo inicial' 
-            contenido='Abonas el curso una vez que consigas tu primer trabajo en IT!'
-            Img={MoneyOffIcon}
-            tipo='sinCosto'
-          ></Tarjeta>
-        </Grid>
-      </Grid>
-        <br/>
-        <br/>
-         <Grid container direction='row'>
-         <Grid item xs={12} sm={4}>
-            <Tarjeta 
-              titulo='gitHub' 
-              contenido='Te enseñamos Git & GitHub para versionar tu codigo y poder trabajar en un verdadero entorno cooperativo.'
-              Img={GitHubIcon}
-              tipo='gitHub'
-            ></Tarjeta>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-            <Tarjeta 
-              titulo='Cloud' 
-              contenido='Las clases seran grabadas y almacenadas en la nube para que las puedas repasarlas cuando lo necesites. Por lo que no te preocupes si faltaste a alguna clase.'
-              Img={CloudUploadIcon}
-              tipo='Cloud'
-            ></Tarjeta>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-            <Tarjeta 
-              titulo='Clases en vivo' 
-              contenido='Clases 100% online. Estudi'
-              Img={QueuePlayNextIcon}
-              tipo='ClasesEnVivo'
-            ></Tarjeta>
-        </Grid>
+        {infoCard.map(data => {
+          return (
+                <Grid item xs={12} sm={4}>
+                <Tarjeta tipo={data.tipo} titulo={data.titulo} contenido={data.contenido} Img={data.Img}/>
+                </Grid>
+               )
+        })}
          </Grid>
         <br/>
     </>

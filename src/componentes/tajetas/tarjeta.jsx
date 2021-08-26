@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme)=>({
 
 export default function Tarjeta({titulo, contenido, Img, tipo}) {
   const classes = useStyles();
-
   return (
     <Card className={classes.card} >
       <CardActionArea>

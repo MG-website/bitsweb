@@ -8,11 +8,11 @@ function App() {
     <div className="App">
       <ThemeProvider theme={createTheme(themeLight)}>
         <Grid container >
-            <Grid sm></Grid>
-            <Grid sm={8}>
+            <Grid item sm/>
+            <Grid item sm={8}>
               <Inicio/>
             </Grid>
-            <Grid sm></Grid>
+            <Grid item sm/>
         </Grid>
       </ThemeProvider>
     </div>
