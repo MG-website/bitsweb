@@ -53,7 +53,7 @@ const infoCard = [
   },
   {
     titulo:'Clases en vivo', 
-    contenido:'Clases 100% online. Estudi',
+    contenido:'Clases 100% online. Estudia desde tu hogar, lo unico que necesitas en una computadora y una conexion a internet.. que no es mas de lo que ya tienes para ver esta web ;)',
     Img:QueuePlayNextIcon,
     tipo:'ClasesEnVivo',
   }
