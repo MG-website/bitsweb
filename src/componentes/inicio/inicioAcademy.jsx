@@ -20,7 +20,6 @@ const InicioAcademy = () => {
   const classes = useStyles()
   return (
     <>
-      <Menu/>
       <Grid container direction='row' className='backSection'>
         <Grid item sm={2}/>
         <Grid xs={12} item sm={5}>

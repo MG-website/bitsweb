@@ -5,6 +5,7 @@ import themeLight from './theme/light';
 import { Grid } from '@material-ui/core';
 import SwichProvider from './context/swichContext';
 import { BrowserRouter } from 'react-router-dom';
+import Routes from './componentes/rutas/routes';
 function App() {
   return (
     <div className="App">
@@ -12,7 +13,7 @@ function App() {
       {/* <ThemeProvider theme={createTheme(themeLight)}> */}
       <BrowserRouter>
         <Grid container >
-              <Inicio/>
+              <Routes/>
         </Grid>
       {/* </ThemeProvider> */}
       </BrowserRouter>

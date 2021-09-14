@@ -9,13 +9,11 @@ const Inicio = () => {
     if(context.isAcademy){
         return <Grid> 
                     <InicioAcademy/>
-                    <Footer/>
 
                </Grid> 
     }else{
         return <Grid container>    
                     <InicioProyect/>
-                    <Footer/>
                 </Grid> 
     }
 

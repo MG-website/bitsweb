@@ -116,18 +116,19 @@ export default function MenuNavAcademy({setIsAcademy, isAcademy}) {
                       </Box>
                   </Grid>
                   <Grid item sm={1}>
-                    <Typography className={classes.font} variant='h6' component={Link}>Home</Typography>
+                    <Typography className={classes.font} variant='h6' component={Link} onClick={()=> history.push('/home')} >Home</Typography>
                   </Grid>
                   <Grid item sm={1}>
-                    <Typography className={classes.font} variant='h6' component={Link}  >Carrera</Typography>
+                    <Typography className={classes.font} variant='h6' component={Link}  onClick={()=> history.push('/carreras')}  >Carreras</Typography>
                   </Grid>
                   <Grid item sm={2}>
-                      <Typography className={classes.font} variant='h6' component={Link}>Sobre nosotros</Typography>
+                      <Typography className={classes.font} variant='h6' component={Link} onClick={()=> history.push('/sobre-nosotros')} >Sobre nosotros</Typography>
                   </Grid>
                   <Grid item sm={1}>
-                  {/* <Typography className={classes.font} color='primary' component={Button} variant='h6'>Aplicar</Typography> */}
-                       {/* <Button className={classes.font} color='primary'>Aplicar</Button>  */}
-                       <Button className={classes.font} color='primary' onClick={()=> setIsAcademy(!isAcademy)}>Cambiar</Button> 
+                      <Typography className={classes.font} variant='h6' component={Link} onClick={()=> history.push('/contacto')} >Contacto</Typography>
+                  </Grid>
+                  <Grid item sm={1}>
+                       <Button className={classes.font} color='primary' onClick={()=> {setIsAcademy(!isAcademy); history.push('/home')}}>Empresa</Button> 
                   </Grid>
                   <Grid item sm={1}/>
               </Grid>

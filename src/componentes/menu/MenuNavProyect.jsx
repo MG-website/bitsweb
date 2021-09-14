@@ -9,6 +9,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../../imagenes/logoPng2.png'
 import { useState } from 'react';
 import { SwichContext } from '../../context/swichContext';
+import { useHistory } from 'react-router';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -46,6 +48,7 @@ export default function MenuNavProyect() {
   const classes = useStyles();
   const [open, setOpen] = useState(false)
   const context = useContext(SwichContext)
+  const history = useHistory()
   const handleClose = ()=>{
     setOpen(false)
   }
@@ -91,10 +94,11 @@ export default function MenuNavProyect() {
                     open={open}
                     onClose={handleClose}
                 >
-                    <MenuItem  onClick={handleClose}>Carrera</MenuItem>
-                    <MenuItem onClick={handleClose}>Sobre nosotros</MenuItem>
-                    <MenuItem onClick={handleClose}>Aplicar</MenuItem>
-                    <MenuItem onClick={()=> {context.setIsAcademy(!context.isAcademy)} }>Cambiar</MenuItem>
+                    <MenuItem  onClick={() => {handleClose() ; history.push('/home')}}>Home</MenuItem>
+                    <MenuItem onClick={() => {handleClose() ; history.push('/servicios')}}>Servicios</MenuItem>
+                    <MenuItem onClick={() => {handleClose() ; history.push('/sobre-nosotros')}}>Sobre nosotros</MenuItem>
+                    <MenuItem onClick={() => {handleClose() ; history.push('/contacto')}}>Contacto</MenuItem>
+                    <MenuItem onClick={()=> {context.setIsAcademy(!context.isAcademy); history.push('/home')} }>Academia</MenuItem>
 
 
                 </Menu>
@@ -109,23 +113,21 @@ export default function MenuNavProyect() {
                       <Box pl={8}>
                            <img src={logo} className={classes.img} alt='tu vieja' ></img>
                       </Box>
+                  </Grid> 
+                  <Grid item sm={1}>
+                    <Typography className={classes.font} variant='h6' component={Link} onClick={()=> history.push('/home')}>Home</Typography>
                   </Grid>
                   <Grid item sm={1}>
-                    <Typography className={classes.font} variant='h6' component={Link}>Home</Typography>
-                  </Grid>
-                  <Grid item sm={1}>
-                    <Typography className={classes.font} variant='h6' component={Link}>Trabajos</Typography>
+                    <Typography className={classes.font} variant='h6' component={Link} onClick={()=> history.push('/servicios')} >Servicios</Typography>
                   </Grid>
                   <Grid item sm={2}>
-                      <Typography className={classes.font} variant='h6' component={Link}>Sobre nosotros</Typography>
+                      <Typography className={classes.font} variant='h6' component={Link} onClick={()=> history.push('/sobre-nosotros')} >Sobre nosotros</Typography>
                   </Grid>
                   <Grid item sm={1}>
-                      <Typography className={classes.font} variant='h6' component={Link}>Contacto</Typography>
+                      <Typography className={classes.font} variant='h6' component={Link} onClick={()=> history.push('/contacto')}>Contacto</Typography>
                   </Grid>
                   <Grid item sm={1}>
-                  {/* <Typography className={classes.font} color='primary' component={Button} variant='h6'>Aplicar</Typography> */}
-                       {/* <Button className={classes.font} color='primary'>Aplicar</Button>  */}
-                       <Button className={classes.font} color='primary' onClick={()=> context.setIsAcademy(!context.isAcademy)}>Cambiar</Button> 
+                       <Button className={classes.font} color='primary' onClick={()=> {context.setIsAcademy(!context.isAcademy); history.push('/home')}}>Academia</Button> 
                   </Grid>
                   <Grid item sm={1}/>
               </Grid>

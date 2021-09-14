@@ -32,7 +32,6 @@ const InicioProyect = () => {
     const classes = styles()
     return (
             <Grid container className={classes.container} >
-                <MenuNavProyect/>
                 {/* <img height='500px' width='100%' src="https://picsum.photos/800/301/?random" alt="1" /> */}
                 <Grid container>
                     <Grid sm/>
