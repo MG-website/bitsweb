@@ -3,18 +3,20 @@ import Inicio from './vistas/inicio/inicio';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import themeLight from './theme/light';
 import { Grid } from '@material-ui/core';
+import SwichProvider from './context/swichContext';
+import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <ThemeProvider theme={createTheme(themeLight)}>
+      <SwichProvider> 
+      {/* <ThemeProvider theme={createTheme(themeLight)}> */}
+      <BrowserRouter>
         <Grid container >
-            <Grid item sm/>
-            <Grid item sm={8}>
               <Inicio/>
-            </Grid>
-            <Grid item sm/>
         </Grid>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
+      </BrowserRouter>
+      </SwichProvider>
     </div>
   );
 }

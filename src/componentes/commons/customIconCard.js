@@ -36,6 +36,8 @@ const useStyles = makeStyles({
     }
   });
 
+
+
 const CustomIconCard = ({ Img, tipo}) => {
   const classes = useStyles()
   let content = <Img/>

@@ -1,6 +1,11 @@
+import "@fontsource/baumans";
+import "@fontsource/poppins";
+
 const themeLight = {
     typography: {
         fontFamily: [
+            'Poppins',
+            'baumans',
             'acumin-pro', 
             'BlinkMacSystemFont', 
             'sans-serif', 
@@ -25,7 +30,9 @@ const themeLight = {
             backGround:'#F1F1F1'
         },
         secondary:{
+            // main:'#f7f7f8'
             main:'#f7f7f8'
+
         },
         terciary:{
             main:'#d9e510'
@@ -34,7 +41,11 @@ const themeLight = {
             100:'#c0c0c0',
             900:'#7a7a7a'
         },
+        background:{
+            default:'#0b64b3'
+        }
     },
+    
 //   SubTitle:{
 //       main:'#0000ff'
 //   },

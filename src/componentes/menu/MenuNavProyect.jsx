@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { Box, Grid, Hidden, IconButton, Link, Menu, MenuItem } from '@material-ui/core';
+import { Box, Grid, Grow, Hidden, IconButton, Link, Menu, MenuItem, Slide } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../../imagenes/logoPng2.png'
 import { useState } from 'react';
+import { SwichContext } from '../../context/swichContext';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -29,11 +30,11 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     transition: 'opacity 0.25s ease-in 0s',
     cursor: 'pointer', 
-    fontFamily: theme.typography.fontFamily
-    // color:'#e92727'
+    fontFamily: theme.typography.fontFamily,
+    //  color:'#28a7b9'
 },
 menu:{
-    backgroundColor:'#ffffff'
+    backgroundColor:theme.palette.background.paper,
 },
 flexContent:{
   display:'flex'
@@ -41,10 +42,10 @@ flexContent:{
   
 }));
 
-export default function MenuNav() {
+export default function MenuNavProyect() {
   const classes = useStyles();
   const [open, setOpen] = useState(false)
-
+  const context = useContext(SwichContext)
   const handleClose = ()=>{
     setOpen(false)
   }
@@ -54,7 +55,11 @@ export default function MenuNav() {
   };
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" color='secondary' >
+      <Slide in={!context.isAcademy} 
+      style={{ transformOrigin: '0 0 0' }}
+      {...(!context.isAcademy ? { timeout: 2000 } : {})}
+      direction="left"  mountOnEnter unmountOnExit>
+      <AppBar position="fixed" className={classes.menu} >
         <Toolbar>
           <Hidden  smUp>
             <Grid container direction='row' justifyContent='space-between' >
@@ -89,6 +94,8 @@ export default function MenuNav() {
                     <MenuItem  onClick={handleClose}>Carrera</MenuItem>
                     <MenuItem onClick={handleClose}>Sobre nosotros</MenuItem>
                     <MenuItem onClick={handleClose}>Aplicar</MenuItem>
+                    <MenuItem onClick={()=> {context.setIsAcademy(!context.isAcademy)} }>Cambiar</MenuItem>
+
 
                 </Menu>
               </Grid>
@@ -96,7 +103,7 @@ export default function MenuNav() {
             
    
           </Hidden>
-          <Hidden smDown>
+          <Hidden  xsDown>
             <Grid container direction='row'  alignItems='center'>
                   <Grid item sm className={classes.flexContent} >
                       <Box pl={8}>
@@ -107,14 +114,18 @@ export default function MenuNav() {
                     <Typography className={classes.font} variant='h6' component={Link}>Home</Typography>
                   </Grid>
                   <Grid item sm={1}>
-                    <Typography className={classes.font} variant='h6' component={Link}>Carrera</Typography>
+                    <Typography className={classes.font} variant='h6' component={Link}>Trabajos</Typography>
                   </Grid>
                   <Grid item sm={2}>
                       <Typography className={classes.font} variant='h6' component={Link}>Sobre nosotros</Typography>
                   </Grid>
                   <Grid item sm={1}>
+                      <Typography className={classes.font} variant='h6' component={Link}>Contacto</Typography>
+                  </Grid>
+                  <Grid item sm={1}>
                   {/* <Typography className={classes.font} color='primary' component={Button} variant='h6'>Aplicar</Typography> */}
-                       <Button className={classes.font} color='primary'>Aplicar</Button> 
+                       {/* <Button className={classes.font} color='primary'>Aplicar</Button>  */}
+                       <Button className={classes.font} color='primary' onClick={()=> context.setIsAcademy(!context.isAcademy)}>Cambiar</Button> 
                   </Grid>
                   <Grid item sm={1}/>
               </Grid>
@@ -123,6 +134,7 @@ export default function MenuNav() {
 
         </Toolbar>
       </AppBar>
+              </Slide>
     </div>
   );
 }
