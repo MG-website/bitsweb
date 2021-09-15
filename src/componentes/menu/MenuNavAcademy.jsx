@@ -95,9 +95,10 @@ export default function MenuNavAcademy({setIsAcademy, isAcademy}) {
                     open={open}
                     onClose={handleClose}
                 >
-                    <MenuItem  onClick={handleClose}>Carrera</MenuItem>
-                    <MenuItem onClick={handleClose}>Sobre nosotros</MenuItem>
-                    <MenuItem onClick={handleClose}>Aplicar</MenuItem>
+                    <MenuItem  onClick={ ()=> {handleClose(); history.push('/home') }}>Home</MenuItem>
+                    <MenuItem onClick={()=> {handleClose(); history.push('/carreras')}}>Carreras</MenuItem>
+                    <MenuItem onClick={()=> {handleClose(); history.push('/sobre-nosotros')}}>Sobre nosotros</MenuItem>
+                    <MenuItem onClick={()=> {handleClose(); history.push('/contacto')}}>Contacto</MenuItem>
                     <MenuItem onClick={()=> {context.setIsAcademy(!context.isAcademy)}}>Cambiar</MenuItem>
 
                 </Menu>
